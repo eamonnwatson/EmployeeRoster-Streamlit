@@ -3,3 +3,13 @@ venv/
 __pycache__/
 *.py[cod]
 .streamlit/secrets.toml
+.env
+.env.*
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+# Local deployment bundles and separately reviewed handler archives.
+deployment/
+dist/
+*.zip

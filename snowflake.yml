@@ -1,9 +1,34 @@
+# INTENTIONALLY INCOMPLETE DRAFT - NOT DEPLOYABLE.
+# Do not deploy this source directory. Run tools/prepare_deployment.py offline
+# with explicit warehouse, compute pool, PyPI EAI, owner/viewer roles and connection.
+# query_warehouse, compute_pool and external_access_integrations are deliberately
+# omitted until supplied by the operator. No resources are discovered or invented.
 definition_version: 2
 entities:
-  streamlit_app:
+  employee_roster:
     type: streamlit
+    identifier:
+      name: EMPLOYEE_ROSTER
+      database: DATASTORE
+      schema: ROSTER
+    runtime_name: SYSTEM$ST_CONTAINER_RUNTIME_PY3_11
     main_file: streamlit_app.py
     artifacts:
-      - pyproject.toml
       - streamlit_app.py
+      - app_pages/clients.py
+      - app_pages/identifiers.py
+      - app_pages/roster.py
+      - app_pages/upload.py
+      - src/employee_roster/__init__.py
+      - src/employee_roster/authorization.py
+      - src/employee_roster/directory.py
+      - src/employee_roster/domain.py
+      - src/employee_roster/excel.py
+      - src/employee_roster/handler.py
+      - src/employee_roster/persistence.py
+      - src/employee_roster/services/__init__.py
+      - src/employee_roster/services/operations.py
+      - src/employee_roster/services/uploads.py
+      - src/employee_roster/ui.py
       - .streamlit/config.toml
+      - pyproject.toml
